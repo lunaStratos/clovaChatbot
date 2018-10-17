@@ -1,0 +1,43 @@
+{
+  "name": "Stratos Heavy Industry",
+  "engines": {
+    "node": ">= 7.6"
+  },
+  "description": "HanRiverTemp",
+  "main": "index.js",
+  "devDependencies": {
+    "@google-cloud/storage": "^1.4.0",
+    "actions-on-google": "^1.6.1",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "iconv-lite": "^0.4.19",
+    "package": "^1.0.1",
+    "package.json": "^2.0.1",
+    "promise": "^8.0.1",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "samples lint",
+    "pretest": "npm run lint",
+    "system-test": "samples test app",
+    "test": "npm run system-test",
+    "e2e-test": "samples test deploy"
+  },
+  "private": "true",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^1.4.0",
+    "async": "^2.6.1",
+    "body-parser": "^1.18.2",
+    "lodash": "^4.17.10",
+    "package": "^1.0.1",
+    "package.json": "^2.0.1",
+    "promise": "^8.0.1",
+    "request": "^2.83.0",
+    "uuid": "^3.2.1"
+  }
+}
