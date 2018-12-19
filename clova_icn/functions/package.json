@@ -1,26 +1,13 @@
 {
-  "name": "Stratos Heavy Industry",
+  "name": "LunaStratos",
   "engines": {
-    "node": ">= 7.6"
+    "node": ">=7.0"
   },
-  "description": "HanRiverTemp",
+  "description": "LottoNumberGenetator",
   "main": "index.js",
-  "devDependencies": {
-    "@google-cloud/storage": "^1.4.0",
-    "actions-on-google": "^1.6.1",
-    "body-parser": "^1.18.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.2",
-    "iconv-lite": "^0.4.19",
-    "package": "^1.0.1",
-    "package.json": "^2.0.1",
-    "promise": "^8.0.1",
-    "querystring": "^0.2.0",
-    "request": "^2.83.0"
-  },
   "scripts": {
     "deploy": "gcloud app deploy",
-    "start": "node app.js",
+    "start": "node index.js",
     "lint": "samples lint",
     "pretest": "npm run lint",
     "system-test": "samples test app",
@@ -31,13 +18,14 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^1.4.0",
-    "async": "^2.6.1",
-    "body-parser": "^1.18.2",
-    "lodash": "^4.17.10",
+    "actions-on-google": "^2.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.1.0",
+    "iconv-lite": "^0.4.24",
     "package": "^1.0.1",
     "package.json": "^2.0.1",
-    "promise": "^8.0.1",
-    "request": "^2.83.0",
-    "uuid": "^3.2.1"
+    "promise": "^8.0.2",
+    "request": "^2.88.0"
   }
 }
