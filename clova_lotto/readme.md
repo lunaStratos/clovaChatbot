@@ -1,8 +1,13 @@
+# Policy
+
+Clova용으로 개발된 로또마스터는 특별히 개인정보를 저장하지 않습니다.
+
+
 # Naver Clova & Line 챗봇 for GCP Cloud Functions용 샘플코드
 
 ## 개요
 
-"로또마스터 시작해줘" 로 인보케이션 가능.
+"로또마스터한테 말하기" 로 인보케이션 가능.
 언어는 한국어 입니다.
 Clova Extensions Kit와 **Google cloud functions**기능으로 **nodeJS**를 이용해서 만들었습니다.
 앱은 기본적으로 로또번호를 생성해 주며 번호 생성후에 사용자의 명령을 기다립니다.
@@ -85,13 +90,18 @@ extension 만들기를 누릅니다
 <img src="./img/extension_05.png?raw=true"/>
 </p>
 
-설명대로 입력해줍니다. 왠만하면 일반 설명만 보고 이용방법을 알수 있게 하는 것도 좋습니다. 그러면 심사용 설명에 사용방법을 쓸 필요가 없으니깐요.
+설명대로 입력해줍니다. 왠만하면 일반 설명만 보고 이용방법을 알 수 있게 하는 것도 좋습니다. 그러면 심사용 설명에 사용방법을 쓸 필요가 없으니깐요.
+
+
+> ※ 아이콘은 Skill Store의 디자인에 맞춰 원형으로 제작해주세요. 아이콘이 사용자에게 어떻게 어떻게 표시되는지 확인하려면 'Clova 앱>설정>스킬 스토어'에서 skill을 선택하세요.
+
+한가지 중요한 점은  **아이콘 이미지는 원형**으로 만들어야 합니다. 저는 img/icon에 보시면 108과 512픽셀로 만들어진 아이콘이 있습니다. 저는 직접 만들었습니다.
 
 <p align="center">
 <img src="./img/extension_06.png?raw=true"/>
 </p>
 
-기타 policy주소를 등록합니다.  선택사항 이지만 저는 [기존에 쓰는 페이지](http://stratos.dothome.co.kr/index.html#policy)가 있는 관계로 입력해줍니다. 없으면 github에 페이지 하나 만들어서 쓰던가 google document하나 파서 공유하는 형태로 하셔도 될 겁니다.
+기타 **policy주소**를 등록합니다.  **선택사항** 이지만 저는 [기존에 쓰는 페이지](http://stratos.dothome.co.kr/index.html#policy)가 있는 관계로 입력해줍니다. 없으면 **github**에 페이지 하나 만들어서 쓰던가 google document하나 파서 공유하는 형태로 하셔도 될 겁니다.
 
 여기까지가 기본 정보의 등록입니다. 이제 **Custom Extention**을 설정하러 갑시다.
 

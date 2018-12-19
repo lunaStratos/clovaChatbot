@@ -126,7 +126,7 @@ exports.clova_icn = (httpReq, httpRes) => {
     } else {
       insertTerminal = 2;
     }
-    var url = "http://openapi.airport.kr/openapi/service/StatusOfDepartures/getDeparturesCongestion?ServiceKey=h8JLcESwAVXzmfaef3OAz81CQZ1uW5S8fgY7Et46VPk2hAdlqCBHbHPskMq4wO9NDf32iV7yqiZSgnAjVWtP7g%3D%3D&terno=" + insertTerminal;
+    var url = "http://openapi.airport.kr/openapi/service/StatusOfDepartures/getDeparturesCongestion?ServiceKey=[서비스키]&terno=" + insertTerminal;
     console.log("url: " + url);
 
     // Get xml data
@@ -331,9 +331,9 @@ exports.clova_icn = (httpReq, httpRes) => {
       function launchRequest(httpRes) {
         const Endfiled = false;
         let displayText = '';
-       
+
           displayText = '안녕하세요 인천공항 출국장 앱입니다. 이 앱은 인천 공항의 출국장 대기인원을 알려드리는 앱입니다. 터미널1 터미널2 가 지원되고 있습니다.' + endText;
-        
+
         let result = makeJson(displayText, Endfiled);
         return httpRes.send(result);
 
