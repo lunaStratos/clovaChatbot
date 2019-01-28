@@ -7,4 +7,6 @@
 * [clova_icn] : 인천공항 출국장
 * [clova_todaywise] : 오늘의 명언
 * [clova_lotto] : 로또마스터
+* [clova_coin] : 코인마스터 (가상화폐 시세 조회) : clovaJS npm 사용 
+
 > 클라우드 서버는 Google Cloud platform의 cloud용으로 제작되었습니다.

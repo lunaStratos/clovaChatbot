@@ -1,0 +1,27 @@
+{
+  "name": "Stratos.inc",
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "description": "CoinMaster",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node index.js",
+    "lint": "samples lint",
+    "pretest": "npm run lint",
+    "system-test": "samples test app",
+    "test": "npm run system-test",
+    "e2e-test": "samples test deploy"
+  },
+  "private": "true",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^1.4.0",
+    "async": "^2.6.1",
+    "package": "^1.0.1",
+    "package.json": "^2.0.1",
+    "promise": "^8.0.1",
+    "request": "^2.83.0",
+  }
+}
