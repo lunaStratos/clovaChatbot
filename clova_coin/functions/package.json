@@ -23,5 +23,6 @@
     "package.json": "^2.0.1",
     "promise": "^8.0.1",
     "request": "^2.83.0",
+    "clovajs":"^0.1.0"
   }
 }
