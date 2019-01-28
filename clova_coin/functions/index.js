@@ -1,12 +1,12 @@
 'use strict';
 const request = require('request');
 const Promise = require('promise');
-const clovaJS = require('clovajs')
+const clovaJS = require('clovajs');
 
 exports.clova_coin = (req, res) => {
   const appTitle = '코인마스터'; // 앱 타이틀을 적어주세요
   let lastTextArr = ['다음 명령을 말해주세요', '다음 질문이 있으신가요', '이제 어떤 것을 해드릴까요.', '이제 명령을 해 주세요.', '다른 질문이 있으신가요?', '이제 질문해주세요!', '또 궁금하신게 있으신가요?']
-  let clova = clovaJS(req, res)
+  const clova = clovaJS(req, res)
 
   // 콤마 찍기 => 화폐나 사람 수
   // 숫자가 들어오면 String
@@ -336,28 +336,26 @@ exports.clova_coin = (req, res) => {
 
   // Welcome launchRequest
   function launchRequest() {
+    console.log('launchRequest')
     const coinName = 'BTC' //코인종류 :코드로 들어옴
-    let displayText = '';
+    let displayText = ''
 
     return asyncTask(coinName)
       .then(function(items) {
-
+        console.log(items)
         if (parseInt(items.code) != 200) {
           //문제있음
           clova.ask("현재 서버에 문제가 있어서 연결할 수 없습니다. 다음에 다시 시도해 주세요. " + shuffle(lastTextArr)[0])
 
         } else { // code 200
           let results = items.data;
-
           let average_price = parseInt(results.openingPrice);
           let imageLink = items.imageLink;
           let name = items.name;
-
           let calculator = parseInt(average_price * 1); // 계산
           let calculatorComma = numberWithCommas(calculator);
-          displayText = name + '의 ' + number + '개 가격은 현재 ' + calculatorComma + '원 입니다.' + shuffle(lastTextArr)[0]
-
-
+          displayText = '안녕하세요 코인마스터 입니다. 현재 기준코인인 ' + name + '의 가격은 현재 ' + calculatorComma + '원 입니다. ' + shuffle(lastTextArr)[0]
+          console.log('displayText : ', displayText)
           clova.ask(displayText)
         }
       });
@@ -367,7 +365,7 @@ exports.clova_coin = (req, res) => {
     let number = clova.get('number') //숫자 (소수점으로 들어올 수 있음)
     const coinName = clova.get('coin') //코인종류 :코드로 들어옴
     console.log(number)
-
+    let displayText = ''
     if (number == undefined) {
       number = 1
     } else {
@@ -376,11 +374,10 @@ exports.clova_coin = (req, res) => {
 
     return asyncTask(coinName)
       .then(function(items) {
-
+        console.log(items)
         if (parseInt(items.code) != 200) {
           //문제있음
           clova.ask("현재 서버에 문제가 있어서 연결할 수 없습니다. 다음에 다시 시도해 주세요. " + shuffle(lastTextArr)[0])
-
         } else { // code 200
           let results = items.data;
 
@@ -392,7 +389,7 @@ exports.clova_coin = (req, res) => {
           let calculatorComma = numberWithCommas(calculator);
           displayText = name + '의 ' + number + '개 가격은 현재 ' + calculatorComma + '원 입니다.' + shuffle(lastTextArr)[0]
 
-
+          console.log('displayText : ', displayText)
           clova.ask(displayText)
         }
       });
@@ -451,6 +448,7 @@ exports.clova_coin = (req, res) => {
   const INTENT_REQUEST = 'IntentRequest';
   const SESSION_ENDED_REQUEST = 'SessionEndedRequest';
   // Intent가 오는 부분
+  console.log('JSON.stringify(req) => ', JSON.stringify(req.body))
   switch (clova.type()) {
     //최초 실행시 오는 intent. LaunchRequest만 쓴다.
     case LAUNCH_REQUEST:
